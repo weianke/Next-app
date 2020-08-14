@@ -37,13 +37,7 @@ export default function Home() {
 
   return (
     <div className="app">
-      <Link href="/a?name=anke">
-        <div>
-          <Button type="primary">link</Button>
-          <Button type="primary">link2</Button>
-        </div>
-      </Link>
-      <Button onClick={gotoTestB} type="primary">路由跳转</Button>
+      <span>Index</span>
     </div>
   );
 }

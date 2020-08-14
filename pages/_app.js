@@ -1,8 +1,10 @@
 import App, { Container } from 'next/app';
 import 'antd/dist/antd.css';
+import Layout from '../components/Layout';
 
 class MyApp extends App {
-  static async getInitialProps({ Component, router, ctx }) {
+  static async getInitialProps({ Component, ctx }) {
+    console.log('app init');
     let pageProps = {};
 
     if (Component.getInitialProps) {
@@ -17,7 +19,9 @@ class MyApp extends App {
     console.log(Component);
     return (
       <Container>
-        <Component {...pageProps} />
+        <Layout>
+          <Component {...pageProps} />
+        </Layout>
       </Container>
     );
   }
