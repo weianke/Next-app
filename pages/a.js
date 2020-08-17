@@ -1,18 +1,23 @@
 import { useRouter } from 'next/router';
 import Link from 'next/link';
 
-function A({ router, name }) {
+const color = '#57f908';
+
+const A = ({ router, name }) => (
   <>
     <Link href="#aaa">
-      <a>A </a>
+      <a className="link">A AAAAAAAAAAA</a>
     </Link>
-    <style jex>{`
+    <style jsx>{`
        a {
          color: blue;
        }
+       .link {
+         color: ${color};
+       }
     `}</style>
-  </>;
-}
+  </>
+)
 
 A.getInitialProps = async () => {
   const promise = new Promise((resolve) => {
