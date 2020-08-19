@@ -4,7 +4,7 @@ import { Button } from 'antd';
 export default ({ children }) => (
   <>
     <header>
-        <Link href="/a?name=anke" as="/a/1">
+        <Link href="/a?id=93948mm3233">
           <div>
             <Button type="primary">linkA</Button>
           </div>
