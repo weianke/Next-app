@@ -16,7 +16,7 @@ const events = [
 
 function makeEvent(type) {
   return (...args) => {
-    console.log(type, ...args);
+    // console.log(type, ...args);
   }
 }
 

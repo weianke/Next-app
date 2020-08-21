@@ -23,6 +23,28 @@ const configs = {
     
     // 返回null使用默认得unique id
     return null
+  },
+  // 手动修改webpack config
+  webpack(config, options) {
+    return config;
+  },
+  // 修改webpackDevMiddleWare配置
+  webpackDevMiddleware: config => {
+    return config;
+  },
+  // 可以在页面通过 procsess.env.customkey获取 value
+  env: {
+    customkey: 'value'
+  },
+  // 下面两个要通过 ’next/config‘ 来读取
+  // 只有在服务端渲染时才会获取的配置
+  serverRuntimeConfig: {
+    mySecret: 'secret',
+    secondSecret: process.env.SECOND_SECRET
+  },
+  // 在服务端渲染得客户端渲染都可获取得配置
+  publicRuntimeConfig: {
+    staticFolder: '/static'
   }
 }
 
@@ -30,4 +52,16 @@ if (typeof require !== 'undefined') {
   require.extensions['.css'] = (file) => {};
 }
 
-module.exports = withCss({});
+module.exports = withCss({
+  env: {
+    customKey: 'value'
+  },
+  serverRuntimeConfig: {
+    mySecret: 'secret',
+    secondSecret: process.env.SECOND_SECRET
+  },
+  // 在服务端渲染得客户端渲染都可获取得配置
+  publicRuntimeConfig: {
+    staticFolder: '/static'
+  }
+});
